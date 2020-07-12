@@ -6,6 +6,7 @@ import { Observable, Subject } from 'rxjs';
 export class ExtIntercationService extends CompInteractionService {
 
   protected subscription: Subject<HTMLElement>;
+
   constructor() {
     super();
   }
