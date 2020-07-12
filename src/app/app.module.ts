@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { CompInteractionService } from './services/component.interaction/comp.interaction.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -10,7 +12,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    CompInteractionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
