@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Observable, Subscription} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, Subscriber, Subscription } from 'rxjs';
 
 @Injectable()
 export class CompInteractionService {
@@ -9,8 +9,8 @@ export class CompInteractionService {
   }
 
   public subscribeOnEvent(domEl: HTMLElement, eventName: string): void {
-    this.subscription =  new Observable((observer) => {
-      const handler: any = (e: HTMLElement) => observer.next(e);
+    this.subscription = new Observable((observer: Subscriber<HTMLElement>) => {
+      const handler: any = (el: HTMLElement) => observer.next(el);
       domEl.addEventListener(eventName, handler);
       return () => {
         domEl.removeEventListener(eventName, handler);
@@ -18,10 +18,17 @@ export class CompInteractionService {
     });
   }
 
-  public getInputValue( that: any, variable: string): void {
-    this.subscription.subscribe((el: HTMLElement) => {
-      // @ts-ignore
-      that[variable] = el.target.value;
+  public getInputValue(that: any, variable: string): void {
+    this.subscription.subscribe({
+      next: (el: HTMLElement) => {
+        // @ts-ignore
+        that[variable] = el.target.value;
+      },
+      error: () => {
+      },
+      complete: () => {
+        console.log('Complete method...');
+      }
     });
   }
 }
