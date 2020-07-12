@@ -3,14 +3,6 @@ import {CompInteractionService} from '../services/component.interaction/comp.int
 
 @Component({
   selector: 'app-emmitter',
-  styles: [`
-      div {
-          cursor: pointer;
-          width: 100px;
-          height: 25px;
-          border: 1px solid silver;
-      }
-  `],
   template: `
     <input type="text" #inputEmmitter>
   `

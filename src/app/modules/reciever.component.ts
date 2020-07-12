@@ -3,7 +3,17 @@ import { CompInteractionService } from '../services/component.interaction/comp.i
 
 @Component({
   selector: 'app-reciever',
+  styles: [`
+      div {
+          cursor: pointer;
+          width: 170px;
+          height: 20px;
+          border: 1px solid silver;
+      }
+  `],
   template: `
+    <br />
+    <br />
     <div>{{ neighborInputValueFrom }}</div>
   `
 })
