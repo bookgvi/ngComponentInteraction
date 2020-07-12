@@ -3,14 +3,14 @@ import {Observable, Subscription} from 'rxjs';
 
 @Injectable()
 export class CompInteractionService {
-  private subscription: Observable<string>;
+  private subscription: Observable<HTMLElement>;
 
   constructor() {
   }
 
   public subscribeOnEvent(domEl: HTMLElement, eventName: string): void {
     this.subscription =  new Observable((observer) => {
-      const handler: any = (e: string) => observer.next(e);
+      const handler: any = (e: HTMLElement) => observer.next(e);
       domEl.addEventListener(eventName, handler);
       return () => {
         domEl.removeEventListener(eventName, handler);
@@ -18,9 +18,10 @@ export class CompInteractionService {
     });
   }
 
-  public getInputValue(value: string): void {
-    this.subscription.subscribe((data: string) => {
-      value = data;
+  public getInputValue( that: any, variable: string): void {
+    this.subscription.subscribe((el: HTMLElement) => {
+      // @ts-ignore
+      that[variable] = el.target.value;
     });
   }
 }
