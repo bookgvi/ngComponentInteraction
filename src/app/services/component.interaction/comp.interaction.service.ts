@@ -3,7 +3,7 @@ import { Observable, Subscriber, Subscription } from 'rxjs';
 
 @Injectable()
 export class CompInteractionService {
-  private subscription: Observable<HTMLElement>;
+  protected subscription: Observable<HTMLElement>;
 
   constructor() {
   }

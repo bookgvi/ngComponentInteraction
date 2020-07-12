@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {CompInteractionService} from '../services/component.interaction/comp.interaction.service';
+import { ExtIntercationService } from '../services/component.interaction/ext.intercation.service';
 
 @Component({
   selector: 'app-emmitter',
@@ -9,7 +10,7 @@ import {CompInteractionService} from '../services/component.interaction/comp.int
 })
 export class EmmiterComponent implements AfterViewInit {
 
-  constructor(private interractionSvc: CompInteractionService) {
+  constructor(private interractionSvc: ExtIntercationService) {
   }
 
   @ViewChild('inputEmmitter') inputEmmitter;

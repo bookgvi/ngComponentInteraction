@@ -3,7 +3,7 @@ import { CompInteractionService } from '../services/component.interaction/comp.i
 import { ExtIntercationService } from '../services/component.interaction/ext.intercation.service';
 
 @Component({
-  selector: 'app-reciever',
+  selector: 'app-reciever2',
   styles: [`
       div {
           cursor: pointer;
@@ -18,7 +18,7 @@ import { ExtIntercationService } from '../services/component.interaction/ext.int
     <div>{{ neighborInputValueFrom }}</div>
   `
 })
-export class RecieverComponent implements AfterViewInit {
+export class Reciever2Component implements AfterViewInit {
   public neighborInputValueFrom: string;
 
   constructor(private interrcatSvc: ExtIntercationService) {

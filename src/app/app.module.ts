@@ -6,6 +6,7 @@ import { InterractCompModule } from './modules/interractComp.module';
 import { AppComponent } from './app.component';
 
 import { CompInteractionService } from './services/component.interaction/comp.interaction.service';
+import { ExtIntercationService } from './services/component.interaction/ext.intercation.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CompInteractionService } from './services/component.interaction/comp.in
     InterractCompModule
   ],
   providers: [
-    CompInteractionService
+    CompInteractionService,
+    ExtIntercationService
   ],
   bootstrap: [AppComponent]
 })
